@@ -36,18 +36,21 @@ namespace PrintPro.Classes
 
 
 
-        public void createPrinterModel(MetroTextBox modelName, ComboBox printerFirm)
+        public void createPrinterModel(MetroTextBox modelName, MetroComboBox printerFirm)
         {
-           PrinterModel printerModels = new PrinterModel();
+            PrinterModel printerModels = new PrinterModel
+            {
+             PrinterModelName = modelName.Text.Trim(),
+             PrinterFirmID = Convert.ToInt32(printerFirm.SelectedValue)
+            };
 
             using(ContextModel db = new ContextModel())
             {
-                printerModels.PrinterModelName = modelName.Text.Trim();
-                printerModels.PrinterFirmID = printerFirm.SelectedIndex;
-
-
+               
                 db.PrinterModels.Add(printerModels);
                 db.SaveChanges();
+
+               
             }
         }
     }

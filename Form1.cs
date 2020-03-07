@@ -31,8 +31,36 @@ namespace PrintPro
         private void button1_Click(object sender, EventArgs e)
         {
             WorkInPrinterModel workInPrinterModel = new WorkInPrinterModel();
-            //workInPrinterModel.createPrinterModel(PrinterModelTB, PrinterFirmCB);
-          //  workInPrinterModel.AllModelPrinters(dvgListPrinter);
+            workInPrinterModel.createPrinterModel(PrinterModelTB, PrinterFirmCB);
+            workInPrinterModel.AllModelPrinters(dvgListPrinter, PrinterFirmCB);
+        }
+
+        private void dvgListPrinter_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dvgListPrinter_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dvgListPrinter_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = null;
+            
+            if(dvgListPrinter.SelectedRows.Count>0)
+            {
+                selectedRow = dvgListPrinter.SelectedRows[0];
+            }
+
+            if (selectedRow == null)
+                return;
+            PrinterModelTB.Text = selectedRow.Cells["PrinterModelName"].Value.ToString();
+            PrinterFirmCB.SelectedIndex = PrinterFirmCB.FindStringExact(selectedRow.Cells["PrinterFirm"].Value.ToString());
+
+            
+
         }
     }
 }
