@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PrintPro
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class PrinterModelForm : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public PrinterModelForm()
         {
             InitializeComponent();
         }
@@ -60,6 +60,13 @@ namespace PrintPro
             PrinterModelTB.Text = selectedRow.Cells["PrinterModelName"].Value.ToString();
             PrinterFirmCB.SelectedIndex = PrinterFirmCB.FindStringExact(selectedRow.Cells["PrinterFirm"].Value.ToString());
 
+        }
+
+        private void ClerarBtn_Click(object sender, EventArgs e)
+        {
+            PrinterModelIDLB.Text = "";
+            PrinterModelTB.Text = string.Empty;
+            PrinterFirmCB.SelectedIndex = 0;
         }
     }
 }
