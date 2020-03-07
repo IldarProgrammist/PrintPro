@@ -11,6 +11,9 @@ namespace PrintPro.Classes
 {
     public  class WorkInPrinterModel
     {        
+
+        private int PrinterModelID { get; set; } 
+
         //Все модели принтеров
         public void AllModelPrinters(DataGridView dgv,MetroComboBox printerFrimcb)
         {
@@ -25,7 +28,7 @@ namespace PrintPro.Classes
 
                 var printerModel = from mp in db.PrinterModels
                                    select new
-                                   {
+                                   {   mp.PrinterModelID,
                                        mp.PrinterModelName,
                                        PrinterFirm = mp.PrinterFirm.PrinterFirmName
                                    };
@@ -36,20 +39,36 @@ namespace PrintPro.Classes
 
 
 
-        public void createPrinterModel(MetroTextBox modelName, MetroComboBox printerFirm)
+        public void createPrinterModel(MetroLabel printerModelIDLab, MetroTextBox modelName, MetroComboBox printerFirm)
         {
-            PrinterModel printerModels = new PrinterModel
-            {
-             PrinterModelName = modelName.Text.Trim(),
-             PrinterFirmID = Convert.ToInt32(printerFirm.SelectedValue)
-            };
+
+            PrinterModelID = Convert.ToInt32(printerModelIDLab.Text);
 
             using(ContextModel db = new ContextModel())
             {
-               
-                db.PrinterModels.Add(printerModels);
-                db.SaveChanges();
+                if (PrinterModelID == 0)
+                {
+                    PrinterModel printerModels = new PrinterModel
+                    {
+                        PrinterModelName = modelName.Text.Trim(),
+                        PrinterFirmID = Convert.ToInt32(printerFirm.SelectedValue)
+                    };
+                    db.PrinterModels.Add(printerModels);
+                }
+                else
+                {
+                  var mpToUpdate=db.PrinterModels.SingleOrDefault(pm => pm.PrinterModelID == PrinterModelID);
+                   if(mpToUpdate !=null)
+                    {
+                        mpToUpdate.PrinterModelName = modelName.Text;
+                        mpToUpdate.PrinterFirmID = Convert.ToInt32(printerFirm.SelectedValue);
+                    }
+                }
 
+
+
+                
+                db.SaveChanges();
                
             }
         }

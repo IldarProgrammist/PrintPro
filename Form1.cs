@@ -24,14 +24,14 @@ namespace PrintPro
           WorkInPrinterModel workInPrinterModel = new WorkInPrinterModel();
           
               workInPrinterModel.AllModelPrinters(dvgListPrinter, PrinterFirmCB);
-            //workInPrinterModel.printerModelSelect(PrinterFirmCB);
+            
          
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             WorkInPrinterModel workInPrinterModel = new WorkInPrinterModel();
-            workInPrinterModel.createPrinterModel(PrinterModelTB, PrinterFirmCB);
+            workInPrinterModel.createPrinterModel(PrinterModelIDLB,PrinterModelTB, PrinterFirmCB);
             workInPrinterModel.AllModelPrinters(dvgListPrinter, PrinterFirmCB);
         }
 
@@ -56,10 +56,9 @@ namespace PrintPro
 
             if (selectedRow == null)
                 return;
+            PrinterModelIDLB.Text = selectedRow.Cells["PrinterModelID"].Value.ToString();
             PrinterModelTB.Text = selectedRow.Cells["PrinterModelName"].Value.ToString();
             PrinterFirmCB.SelectedIndex = PrinterFirmCB.FindStringExact(selectedRow.Cells["PrinterFirm"].Value.ToString());
-
-            
 
         }
     }
