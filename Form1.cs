@@ -23,7 +23,7 @@ namespace PrintPro
 
           WorkInPrinterModel workInPrinterModel = new WorkInPrinterModel();
           
-              workInPrinterModel.AllModelPrinters(dvgListPrinter);
+              workInPrinterModel.AllModelPrinters(dvgListPrinter, PrinterFirmCB);
             //workInPrinterModel.printerModelSelect(PrinterFirmCB);
          
         }
@@ -32,7 +32,7 @@ namespace PrintPro
         {
             WorkInPrinterModel workInPrinterModel = new WorkInPrinterModel();
             //workInPrinterModel.createPrinterModel(PrinterModelTB, PrinterFirmCB);
-            workInPrinterModel.AllModelPrinters(dvgListPrinter);
+          //  workInPrinterModel.AllModelPrinters(dvgListPrinter);
         }
     }
 }

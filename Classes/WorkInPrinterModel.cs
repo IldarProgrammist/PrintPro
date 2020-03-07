@@ -10,29 +10,19 @@ using System.Windows.Forms;
 namespace PrintPro.Classes
 {
     public  class WorkInPrinterModel
-    {
-
-        
-
-
-
-
-
-        //Для проверки вывода на DatagridView
-        public void test(DataGridView dgv)
-        {
-           using(ContextModel db = new ContextModel())
-            {
-                dgv.DataSource = db.PrinterModels.ToList();
-            }
-        }
-
-
+    {        
         //Все модели принтеров
-        public void AllModelPrinters(DataGridView dgv)
+        public void AllModelPrinters(DataGridView dgv,MetroComboBox printerFrimcb)
         {
             using (ContextModel db = new ContextModel())
-            {           
+            {
+                printerFrimcb.DataSource = db.PrinterFirms.ToList();
+                printerFrimcb.DisplayMember = "PrinterFirmName";
+                printerFrimcb.ValueMember = "PritnerFirmID";
+
+
+
+
                 var printerModel = from mp in db.PrinterModels
                                    select new
                                    {
@@ -45,24 +35,7 @@ namespace PrintPro.Classes
         }
 
 
-        
-       
-            // Привязка Фирмы принтера в Combobox
-        public void printerModelSelect(ComboBox printerFirm)
-        {
 
-            using(ContextModel db = new ContextModel())
-            {
-
-                printerFirm.DataSource = db.PrinterFirms.ToList();
-                printerFirm.DisplayMember = "PrinterFirmName";
-                printerFirm.ValueMember = "PritnerFirmID";
-                printerFirm.SelectedIndex = -1;
-            }
-
-        }
-
-        
         public void createPrinterModel(MetroTextBox modelName, ComboBox printerFirm)
         {
            PrinterModel printerModels = new PrinterModel();
