@@ -1,4 +1,5 @@
-﻿using PrintPro.Models;
+﻿using MetroFramework.Controls;
+using PrintPro.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,12 @@ namespace PrintPro.Classes
     public  class WorkInPrinterModel
     {
 
+        
+
+
+
+
+
         //Для проверки вывода на DatagridView
         public void test(DataGridView dgv)
         {
@@ -22,40 +29,41 @@ namespace PrintPro.Classes
 
 
         //Все модели принтеров
-        public void selectAllModelPrinters(DataGridView dgv)
+        public void AllModelPrinters(DataGridView dgv)
         {
             using (ContextModel db = new ContextModel())
-            {
-
+            {           
                 var printerModel = from mp in db.PrinterModels
-                                   join d in db.PrinterFirms on mp.PrinterFirmID equals
-                                   d.PritnerFirmID
                                    select new
                                    {
-                                       d.PrinterFirmName,
-                                       mp.PrinterModelName
-
+                                       mp.PrinterModelName,
+                                       PrinterFirm = mp.PrinterFirm.PrinterFirmName
                                    };
-                dgv.DataSource = printerModel.ToList();
+               dgv.DataSource = printerModel.ToList();
+
             }
         }
 
 
-        // Привязка Фирмы принтера в Combobox
+        
+       
+            // Привязка Фирмы принтера в Combobox
         public void printerModelSelect(ComboBox printerFirm)
         {
 
             using(ContextModel db = new ContextModel())
             {
+
                 printerFirm.DataSource = db.PrinterFirms.ToList();
                 printerFirm.DisplayMember = "PrinterFirmName";
                 printerFirm.ValueMember = "PritnerFirmID";
+                printerFirm.SelectedIndex = -1;
             }
 
         }
 
         
-        public void createPrinterModel(TextBox modelName, ComboBox printerFirm)
+        public void createPrinterModel(MetroTextBox modelName, ComboBox printerFirm)
         {
            PrinterModel printerModels = new PrinterModel();
 
