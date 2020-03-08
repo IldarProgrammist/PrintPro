@@ -13,10 +13,7 @@ using System.Windows.Forms;
 namespace PrintPro.Forms
 {
     public partial class PrinterFirmForm : MetroFramework.Forms.MetroForm
-    {
-
-        
-
+    {   
         public PrinterFirmForm()
         {
             InitializeComponent();
@@ -39,8 +36,14 @@ namespace PrintPro.Forms
 
         private void PrinterFirmForm_Load(object sender, EventArgs e)
         {
+
+            PrinterFirmIDLB.Text = "0";
+            PrinterFirmTB.Text = "";
+
+
             WorkInPrinterFirm workInPrinterFirm = new WorkInPrinterFirm(dgvFirm);
             workInPrinterFirm.LoadFirm();
+            
         }
 
        
@@ -59,5 +62,7 @@ namespace PrintPro.Forms
             PrinterFirmTB.Text = selectedRow.Cells["PrinterFirmName"].Value.ToString();
 
         }
+
+        
     }
 }

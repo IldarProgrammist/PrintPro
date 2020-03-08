@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.PrinterFirmIDLB = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.PrinterFirmTB = new MetroFramework.Controls.MetroTextBox();
@@ -39,7 +40,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.dgvFirm = new MetroFramework.Controls.MetroGrid();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.PrinterFirmIDLB = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirm)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,15 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // PrinterFirmIDLB
+            // 
+            this.PrinterFirmIDLB.AutoSize = true;
+            this.PrinterFirmIDLB.Location = new System.Drawing.Point(169, 34);
+            this.PrinterFirmIDLB.Name = "PrinterFirmIDLB";
+            this.PrinterFirmIDLB.Size = new System.Drawing.Size(16, 19);
+            this.PrinterFirmIDLB.TabIndex = 8;
+            this.PrinterFirmIDLB.Text = "0";
             // 
             // metroButton2
             // 
@@ -173,7 +182,7 @@
             this.dgvFirm.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFirm.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFirm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFirm.Size = new System.Drawing.Size(295, 182);
+            this.dgvFirm.Size = new System.Drawing.Size(295, 224);
             this.dgvFirm.TabIndex = 1;
             this.dgvFirm.SelectionChanged += new System.EventHandler(this.dgvFirm_SelectionChanged);
             // 
@@ -187,25 +196,16 @@
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Все фирмы принтеров";
             // 
-            // PrinterFirmIDLB
-            // 
-            this.PrinterFirmIDLB.AutoSize = true;
-            this.PrinterFirmIDLB.Location = new System.Drawing.Point(169, 34);
-            this.PrinterFirmIDLB.Name = "PrinterFirmIDLB";
-            this.PrinterFirmIDLB.Size = new System.Drawing.Size(16, 19);
-            this.PrinterFirmIDLB.TabIndex = 8;
-            this.PrinterFirmIDLB.Text = "0";
-            // 
             // PrinterFirmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 532);
+            this.ClientSize = new System.Drawing.Size(579, 563);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.dgvFirm);
             this.Controls.Add(this.metroPanel1);
             this.Name = "PrinterFirmForm";
-            this.Text = "PrinterFirm";
+            this.Text = "Фирма принтера";
             this.Load += new System.EventHandler(this.PrinterFirmForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

@@ -74,7 +74,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(77, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(555, 197);
+            this.metroPanel1.Size = new System.Drawing.Size(555, 209);
             this.metroPanel1.TabIndex = 7;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -245,7 +245,7 @@
             this.Controls.Add(this.dvgListPrinter);
             this.Controls.Add(this.metroPanel1);
             this.Name = "PrinterModelForm";
-            this.Text = "Form1";
+            this.Text = "Принтеры";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

@@ -23,10 +23,13 @@ namespace PrintPro
         {
 
           WorkInPrinterModel workInPrinterModel = new WorkInPrinterModel();
-          
-              workInPrinterModel.AllModelPrinters(dvgListPrinter, PrinterFirmCB);
-            
          
+                
+              workInPrinterModel.AllModelPrinters(dvgListPrinter, PrinterFirmCB);
+            PrinterModelTB.Text = "";  
+            PrinterModelIDLB.Text="0";
+            PrinterFirmCB.SelectedIndex = -1;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

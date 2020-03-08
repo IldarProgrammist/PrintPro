@@ -66,6 +66,12 @@
   <ItemGroup>
     <Compile Include="Classes\WorkInPrinterFirm.cs" />
     <Compile Include="Classes\WorkInPrinterModel.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PrinterFirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrinterFirmForm.resx">
       <DependentUpon>PrinterFirmForm.cs</DependentUpon>
     </EmbeddedResource>
