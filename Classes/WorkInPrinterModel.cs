@@ -24,8 +24,6 @@ namespace PrintPro.Classes
                 printerFrimcb.ValueMember = "PritnerFirmID";
 
 
-
-
                 var printerModel = from mp in db.PrinterModels
                                    select new
                                    {   mp.PrinterModelID,
@@ -64,13 +62,10 @@ namespace PrintPro.Classes
                         mpToUpdate.PrinterFirmID = Convert.ToInt32(printerFirm.SelectedValue);
                     }
                 }
-
-
-
-                
                 db.SaveChanges();
                
             }
         }
+
     }
 }

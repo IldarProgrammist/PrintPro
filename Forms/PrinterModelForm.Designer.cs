@@ -33,16 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.ClerarBtn = new System.Windows.Forms.Button();
+            this.PrinterModelIDLB = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.FrimAdd = new MetroFramework.Controls.MetroButton();
             this.PrinterFirmCB = new MetroFramework.Controls.MetroComboBox();
             this.PrinterModelTB = new MetroFramework.Controls.MetroTextBox();
             this.dvgListPrinter = new MetroFramework.Controls.MetroGrid();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.PrinterModelIDLB = new MetroFramework.Controls.MetroLabel();
-            this.ClerarBtn = new System.Windows.Forms.Button();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgListPrinter)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,57 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // ClerarBtn
+            // 
+            this.ClerarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClerarBtn.Location = new System.Drawing.Point(318, 134);
+            this.ClerarBtn.Name = "ClerarBtn";
+            this.ClerarBtn.Size = new System.Drawing.Size(98, 40);
+            this.ClerarBtn.TabIndex = 19;
+            this.ClerarBtn.Text = "Очистить";
+            this.ClerarBtn.UseVisualStyleBackColor = true;
+            this.ClerarBtn.Click += new System.EventHandler(this.ClerarBtn_Click);
+            // 
+            // PrinterModelIDLB
+            // 
+            this.PrinterModelIDLB.AutoSize = true;
+            this.PrinterModelIDLB.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.PrinterModelIDLB.Location = new System.Drawing.Point(184, 10);
+            this.PrinterModelIDLB.Name = "PrinterModelIDLB";
+            this.PrinterModelIDLB.Size = new System.Drawing.Size(21, 25);
+            this.PrinterModelIDLB.TabIndex = 18;
+            this.PrinterModelIDLB.Text = "0";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel4.Location = new System.Drawing.Point(33, 89);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(69, 25);
+            this.metroLabel4.TabIndex = 17;
+            this.metroLabel4.Text = "Фирма:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.Location = new System.Drawing.Point(27, 43);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(156, 25);
+            this.metroLabel3.TabIndex = 16;
+            this.metroLabel3.Text = "Модель принтера:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(27, 10);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(151, 25);
+            this.metroLabel2.TabIndex = 15;
+            this.metroLabel2.Text = "Индинтификатор:";
+            // 
             // FrimAdd
             // 
             this.FrimAdd.Location = new System.Drawing.Point(423, 89);
@@ -88,6 +139,7 @@
             this.FrimAdd.TabIndex = 14;
             this.FrimAdd.Text = "Добавить фирму";
             this.FrimAdd.UseSelectable = true;
+            this.FrimAdd.Click += new System.EventHandler(this.FrimAdd_Click);
             // 
             // PrinterFirmCB
             // 
@@ -184,58 +236,7 @@
             this.metroLabel1.TabIndex = 16;
             this.metroLabel1.Text = "Все модели";
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(27, 10);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(151, 25);
-            this.metroLabel2.TabIndex = 15;
-            this.metroLabel2.Text = "Индинтификатор:";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(27, 43);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(156, 25);
-            this.metroLabel3.TabIndex = 16;
-            this.metroLabel3.Text = "Модель принтера:";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.Location = new System.Drawing.Point(33, 89);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(69, 25);
-            this.metroLabel4.TabIndex = 17;
-            this.metroLabel4.Text = "Фирма:";
-            // 
-            // PrinterModelIDLB
-            // 
-            this.PrinterModelIDLB.AutoSize = true;
-            this.PrinterModelIDLB.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.PrinterModelIDLB.Location = new System.Drawing.Point(184, 10);
-            this.PrinterModelIDLB.Name = "PrinterModelIDLB";
-            this.PrinterModelIDLB.Size = new System.Drawing.Size(21, 25);
-            this.PrinterModelIDLB.TabIndex = 18;
-            this.PrinterModelIDLB.Text = "0";
-            // 
-            // ClerarBtn
-            // 
-            this.ClerarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ClerarBtn.Location = new System.Drawing.Point(318, 134);
-            this.ClerarBtn.Name = "ClerarBtn";
-            this.ClerarBtn.Size = new System.Drawing.Size(98, 40);
-            this.ClerarBtn.TabIndex = 19;
-            this.ClerarBtn.Text = "Очистить";
-            this.ClerarBtn.UseVisualStyleBackColor = true;
-            this.ClerarBtn.Click += new System.EventHandler(this.ClerarBtn_Click);
-            // 
-            // Form1
+            // PrinterModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +244,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.dvgListPrinter);
             this.Controls.Add(this.metroPanel1);
-            this.Name = "Form1";
+            this.Name = "PrinterModelForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metroPanel1.ResumeLayout(false);

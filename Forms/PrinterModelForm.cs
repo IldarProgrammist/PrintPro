@@ -1,4 +1,5 @@
 ﻿using PrintPro.Classes;
+using PrintPro.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +68,12 @@ namespace PrintPro
             PrinterModelIDLB.Text = "";
             PrinterModelTB.Text = string.Empty;
             PrinterFirmCB.SelectedIndex = 0;
+        }
+
+        private void FrimAdd_Click(object sender, EventArgs e)
+        {
+            PrinterFirmForm printerFirmForm = new PrinterFirmForm();
+            printerFirmForm.Show(this);
         }
     }
 }
