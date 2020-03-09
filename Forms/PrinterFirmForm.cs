@@ -1,13 +1,6 @@
 ﻿using PrintPro.Classes;
 using PrintPro.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PrintPro.Forms
@@ -37,16 +30,17 @@ namespace PrintPro.Forms
         private void PrinterFirmForm_Load(object sender, EventArgs e)
         {
 
+           
+            WorkInPrinterFirm workInPrinterFirm = new WorkInPrinterFirm(dgvFirm);
+            workInPrinterFirm.LoadFirm();
             PrinterFirmIDLB.Text = "0";
             PrinterFirmTB.Text = "";
 
 
-            WorkInPrinterFirm workInPrinterFirm = new WorkInPrinterFirm(dgvFirm);
-            workInPrinterFirm.LoadFirm();
-            
+
         }
 
-       
+
         private void dgvFirm_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = null;

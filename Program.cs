@@ -17,7 +17,7 @@ namespace PrintPro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrinterModelForm());
+            Application.Run(new CatrigeModelForm_());
         }
     }
 }
