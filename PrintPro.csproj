@@ -91,6 +91,12 @@
     <Compile Include="Forms\PrinterModelForm.Designer.cs">
       <DependentUpon>PrinterModelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Printer_Firm_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Printer_Firm_Form.Designer.cs">
+      <DependentUpon>Printer_Firm_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Catrige.cs" />
     <Compile Include="Models\CatrigeExtradition.cs" />
     <Compile Include="Models\CatrigeModel.cs" />
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrinterModelForm.resx">
       <DependentUpon>PrinterModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Printer_Firm_Form.resx">
+      <DependentUpon>Printer_Firm_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
