@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\WorkInCatrigeModel.cs" />
+    <Compile Include="Classes\WorkInPrinter.cs" />
     <Compile Include="Classes\WorkInPrinterFirm.cs" />
     <Compile Include="Classes\WorkInPrinterModel.cs" />
     <Compile Include="Forms\CatrigeModelForm_.cs">
@@ -85,17 +86,17 @@
     <Compile Include="Forms\PrinterFirmForm.Designer.cs">
       <DependentUpon>PrinterFirmForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrinterModelForm.cs">
+    <Compile Include="Forms\PrinteModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrinterModelForm.Designer.cs">
-      <DependentUpon>PrinterModelForm.cs</DependentUpon>
+    <Compile Include="Forms\PrinteModelForm.Designer.cs">
+      <DependentUpon>PrinteModelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Printer_Firm_Form.cs">
+    <Compile Include="Forms\PrintersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Printer_Firm_Form.Designer.cs">
-      <DependentUpon>Printer_Firm_Form.cs</DependentUpon>
+    <Compile Include="Forms\PrintersForm.Designer.cs">
+      <DependentUpon>PrintersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Catrige.cs" />
     <Compile Include="Models\CatrigeExtradition.cs" />
@@ -120,11 +121,11 @@
     <EmbeddedResource Include="Forms\PrinterFirmForm.resx">
       <DependentUpon>PrinterFirmForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrinterModelForm.resx">
-      <DependentUpon>PrinterModelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PrinteModelForm.resx">
+      <DependentUpon>PrinteModelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Printer_Firm_Form.resx">
-      <DependentUpon>Printer_Firm_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PrintersForm.resx">
+      <DependentUpon>PrintersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

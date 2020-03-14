@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PrintPro.Forms
 {
-    public partial class Printer_Firm_Form : MetroFramework.Forms.MetroForm
+    public partial class PrinteModelForm : MetroFramework.Forms.MetroForm
     {
-        public Printer_Firm_Form()
+        public PrinteModelForm()
         {
             InitializeComponent();
         }
@@ -22,6 +22,8 @@ namespace PrintPro.Forms
         {
 
             LoadPrinterModel();
+            load();
+
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -52,7 +54,9 @@ namespace PrintPro.Forms
                 }
                 db.SaveChanges();   
             }
-            LoadPrinterModel();
+            clearPrinterModel();
+            load();
+
         }
 
     
@@ -65,17 +69,25 @@ namespace PrintPro.Forms
                 PrinterFirmCB.DataSource = db.PrinterFirms.ToList();
                 PrinterFirmCB.ValueMember = "PritnerFirmID";
                 PrinterFirmCB.DisplayMember = "PrinterFirmName";
+            }
+
+        }
+
+        private void load()
+        {
+            using (var db = new Models.ContextModel())
+            {
                 var printerModels = from pm in db.PrinterModels
                                     select new
-                                    {   pm.PrinterModelID,
+                                    {
+                                        pm.PrinterModelID,
                                         pm.PrinterModelName,
                                         PrinterFirm = pm.PrinterFirm.PrinterFirmName
                                     };
                 dgvprinterModels.DataSource = printerModels.ToList();
-
             }
-
         }
+
 
         private void dgvprinterModels_SelectionChanged(object sender, EventArgs e)
         {
@@ -93,6 +105,28 @@ namespace PrintPro.Forms
 
 
             
+        }
+
+
+
+        private void clearPrinterModel()
+        {
+            IDLB.Text = "0";
+            PrinterModelNameTB.Text = string.Empty;
+            PrinterFirmCB.SelectedIndex = -1;
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            clearPrinterModel();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            
+
+            
+          
         }
     }
 }

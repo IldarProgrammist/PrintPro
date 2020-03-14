@@ -21,5 +21,23 @@ namespace PrintPro.Forms
         {
 
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            PrinterFirmForm printerFirmForm = new PrinterFirmForm();
+            printerFirmForm.Show();
+        }
+
+        private void Printers_Click(object sender, EventArgs e)
+        {
+            PrinteModelForm printeModel_Form = new PrinteModelForm();
+            printeModel_Form.Show();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            CatrigeModelForm_ catrigeModelForm_ = new CatrigeModelForm_();
+            catrigeModelForm_.Show();
+        }
     }
 }

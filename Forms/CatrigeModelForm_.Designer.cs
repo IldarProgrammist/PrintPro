@@ -40,7 +40,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.dgvCatrigeModel = new MetroFramework.Controls.MetroGrid();
-            this.CatirgeModelLab = new MetroFramework.Controls.MetroLabel();
+            this.CatirgeModelLabID = new MetroFramework.Controls.MetroLabel();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatrigeModel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.ColorCB.ItemHeight = 23;
             this.ColorCB.Location = new System.Drawing.Point(191, 210);
             this.ColorCB.Name = "ColorCB";
-            this.ColorCB.Size = new System.Drawing.Size(235, 29);
+            this.ColorCB.Size = new System.Drawing.Size(354, 29);
             this.ColorCB.TabIndex = 0;
             this.ColorCB.UseSelectable = true;
             // 
@@ -60,7 +61,7 @@
             this.CatrigeModelCB.ItemHeight = 23;
             this.CatrigeModelCB.Location = new System.Drawing.Point(191, 148);
             this.CatrigeModelCB.Name = "CatrigeModelCB";
-            this.CatrigeModelCB.Size = new System.Drawing.Size(235, 29);
+            this.CatrigeModelCB.Size = new System.Drawing.Size(354, 29);
             this.CatrigeModelCB.TabIndex = 1;
             this.CatrigeModelCB.UseSelectable = true;
             // 
@@ -70,7 +71,7 @@
             // 
             // 
             this.CatrigeModelName.CustomButton.Image = null;
-            this.CatrigeModelName.CustomButton.Location = new System.Drawing.Point(213, 1);
+            this.CatrigeModelName.CustomButton.Location = new System.Drawing.Point(332, 1);
             this.CatrigeModelName.CustomButton.Name = "";
             this.CatrigeModelName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.CatrigeModelName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -88,7 +89,7 @@
             this.CatrigeModelName.SelectionLength = 0;
             this.CatrigeModelName.SelectionStart = 0;
             this.CatrigeModelName.ShortcutsEnabled = true;
-            this.CatrigeModelName.Size = new System.Drawing.Size(235, 23);
+            this.CatrigeModelName.Size = new System.Drawing.Size(354, 23);
             this.CatrigeModelName.TabIndex = 2;
             this.CatrigeModelName.UseSelectable = true;
             this.CatrigeModelName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -139,6 +140,7 @@
             this.metroButton2.TabIndex = 7;
             this.metroButton2.Text = "Очистить";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // dgvCatrigeModel
             // 
@@ -182,22 +184,34 @@
             this.dgvCatrigeModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCatrigeModel.Size = new System.Drawing.Size(548, 150);
             this.dgvCatrigeModel.TabIndex = 8;
+            this.dgvCatrigeModel.SelectionChanged += new System.EventHandler(this.dgvCatrigeModel_SelectionChanged);
             // 
-            // CatirgeModelLab
+            // CatirgeModelLabID
             // 
-            this.CatirgeModelLab.AutoSize = true;
-            this.CatirgeModelLab.Location = new System.Drawing.Point(191, 50);
-            this.CatirgeModelLab.Name = "CatirgeModelLab";
-            this.CatirgeModelLab.Size = new System.Drawing.Size(16, 19);
-            this.CatirgeModelLab.TabIndex = 9;
-            this.CatirgeModelLab.Text = "0";
+            this.CatirgeModelLabID.AutoSize = true;
+            this.CatirgeModelLabID.Location = new System.Drawing.Point(191, 50);
+            this.CatirgeModelLabID.Name = "CatirgeModelLabID";
+            this.CatirgeModelLabID.Size = new System.Drawing.Size(16, 19);
+            this.CatirgeModelLabID.TabIndex = 9;
+            this.CatirgeModelLabID.Text = "0";
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(432, 257);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(113, 32);
+            this.metroButton3.TabIndex = 10;
+            this.metroButton3.Text = "Удалить";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // CatrigeModelForm_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 545);
-            this.Controls.Add(this.CatirgeModelLab);
+            this.Controls.Add(this.metroButton3);
+            this.Controls.Add(this.CatirgeModelLabID);
             this.Controls.Add(this.dgvCatrigeModel);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
@@ -226,6 +240,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroGrid dgvCatrigeModel;
-        private MetroFramework.Controls.MetroLabel CatirgeModelLab;
+        private MetroFramework.Controls.MetroLabel CatirgeModelLabID;
+        private MetroFramework.Controls.MetroButton metroButton3;
     }
 }

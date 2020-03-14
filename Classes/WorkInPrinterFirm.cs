@@ -1,4 +1,5 @@
-﻿using MetroFramework.Controls;
+﻿using MetroFramework;
+using MetroFramework.Controls;
 using PrintPro.Models;
 using System;
 using System.Linq;
@@ -45,6 +46,7 @@ namespace PrintPro.Classes
                         PrinterFirmName = firmName,
                     };
                     db.PrinterFirms.Add(printerFirm);
+                   
                 }
                 else
                 {
@@ -61,6 +63,19 @@ namespace PrintPro.Classes
             }
         }
 
+        public void deleteFirm(string metroLabel)
+        {
+            PrinterFirmID = Convert.ToInt32(metroLabel);
+
+            using(ContextModel db = new ContextModel())
+            {
+                PrinterFirm printerFirm = db.PrinterFirms
+                   .Where(p => p.PritnerFirmID == PrinterFirmID)
+                   .FirstOrDefault();
+                db.PrinterFirms.Remove(printerFirm);
+                db.SaveChanges();
+            }
+        }
     }    
 }
 

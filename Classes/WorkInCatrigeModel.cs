@@ -54,13 +54,14 @@ namespace PrintPro.Classes
                 ColorCB.DataSource = db.Colors.ToList();
                 PrinterModelCB.DataSource = db.PrinterModels.ToList();
 
-             
                
                 Dgv.DataSource = selectAll.ToList();
             }
         }
 
+
         public void createCatrigeModel(MetroLabel LabID)
+
         {
             CatrigeModelID = Convert.ToInt32(LabID.Text);
 
@@ -80,17 +81,36 @@ namespace PrintPro.Classes
                 {
                     var cmUptade =  db.CatrigeModels.SingleOrDefault(c => c.CatrigeModelID == CatrigeModelID);
                     var cUpdate  =  db.CatrigeModels.SingleOrDefault(x=>x.ColorID == ColorID);  
+                   
                     if(cmUptade != null)
                     {
                         cmUptade.CatrigeName = CatrigeModelName.Text;
                         cmUptade.ColorID = Convert.ToInt32(ColorCB.SelectedValue);
-                        cUpdate.CatrigeModelID = Convert.ToInt32(PrinterModelCB.SelectedValue);
+                        cmUptade.PrinterModelID = Convert.ToInt32(PrinterModelCB.SelectedValue);
+            
+                        // cUpdate.PrinterModelID = Convert.ToInt32(PrinterModelCB.SelectedValue);
                     }
                    
                 }
                 db.SaveChanges();
             }
+        }
 
+
+
+        public void deleteCatrigeModel(string metroLabel)
+        {
+            CatrigeModelID = Convert.ToInt32(metroLabel);
+
+            using (ContextModel db = new ContextModel())
+            {
+                CatrigeModel catrogeModel = db.CatrigeModels
+                   .Where(p => p.CatrigeModelID == CatrigeModelID)
+                   .FirstOrDefault();
+                db.CatrigeModels.Remove(catrogeModel);
+                db.SaveChanges();
+                LoadCatrigeModel();
+            }
         }
     }
 }

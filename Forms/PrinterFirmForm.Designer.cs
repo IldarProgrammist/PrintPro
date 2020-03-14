@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.DeleteFirm = new MetroFramework.Controls.MetroButton();
             this.PrinterFirmIDLB = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -46,6 +47,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.DeleteFirm);
             this.metroPanel1.Controls.Add(this.PrinterFirmIDLB);
             this.metroPanel1.Controls.Add(this.metroButton2);
             this.metroPanel1.Controls.Add(this.metroButton1);
@@ -57,11 +59,21 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(23, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(524, 165);
+            this.metroPanel1.Size = new System.Drawing.Size(615, 178);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // DeleteFirm
+            // 
+            this.DeleteFirm.Location = new System.Drawing.Point(412, 110);
+            this.DeleteFirm.Name = "DeleteFirm";
+            this.DeleteFirm.Size = new System.Drawing.Size(106, 30);
+            this.DeleteFirm.TabIndex = 9;
+            this.DeleteFirm.Text = "Удалить";
+            this.DeleteFirm.UseSelectable = true;
+            this.DeleteFirm.Click += new System.EventHandler(this.DeleteFirm_Click);
             // 
             // PrinterFirmIDLB
             // 
@@ -98,7 +110,7 @@
             // 
             // 
             this.PrinterFirmTB.CustomButton.Image = null;
-            this.PrinterFirmTB.CustomButton.Location = new System.Drawing.Point(201, 1);
+            this.PrinterFirmTB.CustomButton.Location = new System.Drawing.Point(327, 1);
             this.PrinterFirmTB.CustomButton.Name = "";
             this.PrinterFirmTB.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.PrinterFirmTB.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -116,7 +128,7 @@
             this.PrinterFirmTB.SelectionLength = 0;
             this.PrinterFirmTB.SelectionStart = 0;
             this.PrinterFirmTB.ShortcutsEnabled = true;
-            this.PrinterFirmTB.Size = new System.Drawing.Size(223, 23);
+            this.PrinterFirmTB.Size = new System.Drawing.Size(349, 23);
             this.PrinterFirmTB.TabIndex = 5;
             this.PrinterFirmTB.UseSelectable = true;
             this.PrinterFirmTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -182,7 +194,7 @@
             this.dgvFirm.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFirm.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFirm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFirm.Size = new System.Drawing.Size(295, 224);
+            this.dgvFirm.Size = new System.Drawing.Size(302, 178);
             this.dgvFirm.TabIndex = 1;
             this.dgvFirm.SelectionChanged += new System.EventHandler(this.dgvFirm_SelectionChanged);
             // 
@@ -200,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 563);
+            this.ClientSize = new System.Drawing.Size(703, 508);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.dgvFirm);
             this.Controls.Add(this.metroPanel1);
@@ -226,5 +238,6 @@
         private MetroFramework.Controls.MetroGrid dgvFirm;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel PrinterFirmIDLB;
+        private MetroFramework.Controls.MetroButton DeleteFirm;
     }
 }

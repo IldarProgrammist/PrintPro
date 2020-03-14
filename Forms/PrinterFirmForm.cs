@@ -10,13 +10,12 @@ namespace PrintPro.Forms
         public PrinterFirmForm()
         {
             InitializeComponent();
-        }
 
+        }
 
         //очистить
         private void metroButton2_Click(object sender, EventArgs e)
         {
-
             PrinterFirmIDLB.Text = "0";
             PrinterFirmTB.Text = "";
         }
@@ -25,18 +24,15 @@ namespace PrintPro.Forms
         {
             WorkInPrinterFirm workInPrinterFirm = new WorkInPrinterFirm(dgvFirm);
             workInPrinterFirm.createPrinterFirm(PrinterFirmIDLB.Text, PrinterFirmTB.Text);
+
         }
 
         private void PrinterFirmForm_Load(object sender, EventArgs e)
         {
-
-           
             WorkInPrinterFirm workInPrinterFirm = new WorkInPrinterFirm(dgvFirm);
             workInPrinterFirm.LoadFirm();
             PrinterFirmIDLB.Text = "0";
             PrinterFirmTB.Text = "";
-
-
 
         }
 
@@ -54,9 +50,26 @@ namespace PrintPro.Forms
                 return;
             PrinterFirmIDLB.Text = selectedRow.Cells["PritnerFirmID"].Value.ToString();
             PrinterFirmTB.Text = selectedRow.Cells["PrinterFirmName"].Value.ToString();
-
         }
 
-        
+        private void DeleteFirm_Click(object sender, EventArgs e)
+        {
+            WorkInPrinterFirm workInPrinterFirm = new WorkInPrinterFirm(dgvFirm);
+            
+            PrinterFirmForm printerFimForm = new PrinterFirmForm();
+
+            MessageBox.Show("Вы уверены что хотите удалить данную фирму?", "Удаление", MessageBoxButtons.YesNo);
+            workInPrinterFirm.deleteFirm(PrinterFirmIDLB.Text);
+            workInPrinterFirm.LoadFirm();
+
+
+
+
+
+
+
+
+
+        }
     }
 }
